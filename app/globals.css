@@ -100,3 +100,7 @@
 .cl-userButtonPopoverActionButton {
   color: white;
 }
+
+.cl-providerIcon__github {
+  filter: invert(1);
+}

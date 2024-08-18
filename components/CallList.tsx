@@ -71,7 +71,7 @@ const CallList = ({ type }: { type: "upcoming" | "recordings" | "ended" }) => {
       {calls && calls.length > 0 ? (
         calls.map((meeting: Call | CallRecording) => (
           <MeetingCard
-            key={(meeting as Call).id}
+            key={(meeting as Call)?.id}
             icon={
               type === "ended"
                 ? "/icons/previous.svg"
@@ -86,7 +86,7 @@ const CallList = ({ type }: { type: "upcoming" | "recordings" | "ended" }) => {
             }
             date={
               meeting.state?.startsAt?.toLocaleString() ||
-              meeting.start_time.toLocaleString
+              meeting.start_time.toLocaleString()
             }
             isPreviousMeeting={type === "ended"}
             buttonIcon1={type === "recordings" ? "/icons/play.svg" : undefined}
